@@ -1,7 +1,7 @@
 "use client";
 
+import { ConvertImgToIcoSection } from "@/components/convert-img-to-ico-section";
 import { MainNavbar } from "@/components/navbar";
-import { QRCodeGenerator } from "@/components/qr-code-section";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ArrowLeftRight, QrCode } from "lucide-react";
 
@@ -16,15 +16,12 @@ export default function Page() {
               <div className="w-16 h-16 flex items-center justify-center rounded-md bg-yellow-300/15 border-2">
                 <ArrowLeftRight className="h-10 w-10 text-yellow-500" />
               </div>
-              {/* <div className="w-16 h-16 flex items-center justify-center rounded-md bg-amber-300/15 border-2">
-                <ArrowLeftRight className="h-10 w-10 text-amber-500" />
-              </div> */}
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
                 Image to ICO
               </h1>
             </div>
             <div className="w-full">
-              <QRCodeGenerator />
+              <ConvertImgToIcoSection />
             </div>
           </div>
         </div>
