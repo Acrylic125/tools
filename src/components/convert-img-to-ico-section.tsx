@@ -170,13 +170,10 @@ export function ConvertImgToIcoSection() {
   );
 
   const handleConvertAndDownload = useCallback(() => {
-    console.log("Button clicked, files:", files.length);
     if (files.length === 0) {
-      console.log("No files selected");
       return;
     }
 
-    console.log("Starting mutation with file:", files[0].name);
     downloadMutation.mutate(files[0]);
   }, [files, downloadMutation]);
 

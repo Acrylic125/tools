@@ -4,6 +4,7 @@ import { useThemeStore } from "@/components/theme-store";
 import { cn } from "@/lib/utils";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export function ThemeProvider({
   children,
@@ -58,11 +59,14 @@ export function Providers({
   //       ],
   //     })
   //   );
+
   return (
     // <trpc.Provider client={trpcClient} queryClient={queryClient}>
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider className={className}>{children}</ThemeProvider>
-    </QueryClientProvider>
+    <ClerkProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider className={className}>{children}</ThemeProvider>
+      </QueryClientProvider>
+    </ClerkProvider>
     // </trpc.Provider>
   );
 }

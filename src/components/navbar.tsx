@@ -10,7 +10,11 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Favicon } from "./icons/Favicon";
-import { ArrowLeftRight, QrCode } from "lucide-react";
+import { ArrowLeftRight, MoonIcon, QrCode, SunIcon } from "lucide-react";
+import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
+import { useThemeStore } from "./theme-store";
+import { useShallow } from "zustand/react/shallow";
+import { Button } from "./ui/button";
 
 const components = [
   {
@@ -36,12 +40,13 @@ const components = [
 ];
 
 export function MainNavbar() {
-  //   const { theme, setTheme } = useThemeStore(
-  //     useShallow(({ theme, setTheme }) => ({
-  //       theme,
-  //       setTheme,
-  //     }))
-  //   );
+  const { theme, setTheme } = useThemeStore(
+    useShallow(({ theme, setTheme }) => ({
+      theme,
+      setTheme,
+    }))
+  );
+  const { user } = useUser();
 
   return (
     <nav className="w-full flex flex-col items-center border-b border-border">
@@ -101,7 +106,7 @@ export function MainNavbar() {
           </NavigationMenu>
         </div>
         <div className="flex flex-row items-center gap-2">
-          {/* <Button
+          <Button
             variant="outline"
             size="icon"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
@@ -111,7 +116,8 @@ export function MainNavbar() {
             ) : (
               <MoonIcon className="h-4 w-4" />
             )}
-          </Button> */}
+          </Button>
+          {user ? <UserButton /> : <SignInButton />}
 
           {/* <Button variant="default" asChild>
             <Link href="/new">
