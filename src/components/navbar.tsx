@@ -22,8 +22,8 @@ const components = [
     href: "/qrcode",
     description: "Generate QR codes for your website or application",
     icon: (
-      <div className="w-8 h-8 flex items-center justify-center rounded-md bg-purple-500/15 border">
-        <QrCode className="h-6 w-6 text-purple-500" />
+      <div className="w-8 h-8 flex items-center justify-center rounded-md bg-purple-300/15 border">
+        <QrCode className="h-6 w-6 dark:text-purple-400 text-purple-900" />
       </div>
     ),
   },
@@ -32,7 +32,7 @@ const components = [
     href: "/img-to-ico",
     description: "Convert images to ICO files",
     icon: (
-      <div className="w-8 h-8 flex items-center justify-center rounded-md bg-yellow-500/15 border">
+      <div className="w-8 h-8 flex items-center justify-center rounded-md bg-yellow-50 dark:bg-yellow-300/15 border">
         <ArrowLeftRight className="h-6 w-6 text-yellow-500" />
       </div>
     ),
@@ -82,7 +82,7 @@ export function MainNavbar() {
                           href={component.href}
                           className="flex flex-row gap-2"
                         >
-                          <div className="w-8 h-8 flex items-center justify-center rounded-md bg-purple-500/15 border">
+                          <div className="w-8 h-8 flex items-center justify-center rounded-md border">
                             {component.icon}
                             {/* <QrCode className="h-6 w-6 text-purple-500" /> */}
                           </div>

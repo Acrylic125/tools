@@ -13,8 +13,8 @@ export default function Page() {
         <div className="w-full flex flex-col items-center">
           <div className="flex flex-col items-center w-full max-w-7xl text-foreground p-12 md:p-16 lg:p-24 gap-4 md:gap-6 lg:gap-8">
             <div className="flex flex-col items-center gap-4">
-              <div className="w-16 h-16 flex items-center justify-center rounded-md bg-purple-500/15 border-2">
-                <QrCode className="h-10 w-10 text-purple-500" />
+              <div className="w-16 h-16 flex items-center justify-center rounded-md bg-purple-300/15 border-2">
+                <QrCode className="h-10 w-10 dark:text-purple-400 text-purple-900" />
               </div>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
                 QR Code Generator
