@@ -10,13 +10,28 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Favicon } from "./icons/Favicon";
-import { QrCode } from "lucide-react";
+import { ArrowLeftRight, QrCode } from "lucide-react";
 
 const components = [
   {
     title: "QR Code",
     href: "/qrcode",
     description: "Generate QR codes for your website or application",
+    icon: (
+      <div className="w-8 h-8 flex items-center justify-center rounded-md bg-purple-500/15 border">
+        <QrCode className="h-6 w-6 text-purple-500" />
+      </div>
+    ),
+  },
+  {
+    title: "Image to ICO",
+    href: "/img-to-ico",
+    description: "Convert images to ICO files",
+    icon: (
+      <div className="w-8 h-8 flex items-center justify-center rounded-md bg-yellow-500/15 border">
+        <ArrowLeftRight className="h-6 w-6 text-yellow-500" />
+      </div>
+    ),
   },
 ];
 
@@ -63,7 +78,8 @@ export function MainNavbar() {
                           className="flex flex-row gap-2"
                         >
                           <div className="w-8 h-8 flex items-center justify-center rounded-md bg-purple-500/15 border">
-                            <QrCode className="h-6 w-6 text-purple-500" />
+                            {component.icon}
+                            {/* <QrCode className="h-6 w-6 text-purple-500" /> */}
                           </div>
                           <div className="flex-1 flex flex-col gap-1">
                             <div className="flex flex-row items-center gap-2">
