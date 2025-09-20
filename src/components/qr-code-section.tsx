@@ -157,7 +157,9 @@ export function QRCodeGenerator() {
           onChange={(e) => setUrl(e.target.value)}
         />
         <div className="w-fit h-12 flex items-center px-2 border-l-border border-l-2">
-          <Button onClick={() => setGeneratedUrl(url)}>Generate</Button>
+          <Button size="sm" onClick={() => setGeneratedUrl(url)}>
+            Generate
+          </Button>
         </div>
       </div>
       <div className="w-full flex flex-col md:flex-row items-center md:items-start gap-4 lg:gap-8 border-border border-4 border-dashed rounded-md p-2 pb-12 lg:p-4">
