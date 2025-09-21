@@ -15,7 +15,11 @@ import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { useThemeStore } from "./theme-store";
 import { useShallow } from "zustand/react/shallow";
 import { Button } from "./ui/button";
-import { ImageToIcoToolIcon, QRCodeToolIcon } from "./icons/tool-icons";
+import {
+  ImageToIcoToolIcon,
+  QRCodeToolIcon,
+  ShareToolIcon,
+} from "./icons/tool-icons";
 
 const components = [
   {
@@ -29,6 +33,12 @@ const components = [
     href: "/img-to-ico",
     description: "Convert images to ICO files",
     icon: <ImageToIcoToolIcon />,
+  },
+  {
+    title: "Share",
+    href: "/share",
+    description: "Share your content with others",
+    icon: <ShareToolIcon />,
   },
 ];
 
