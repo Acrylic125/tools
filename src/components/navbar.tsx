@@ -10,32 +10,25 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Favicon } from "./icons/Favicon";
-import { ArrowLeftRight, MoonIcon, QrCode, SunIcon } from "lucide-react";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { useThemeStore } from "./theme-store";
 import { useShallow } from "zustand/react/shallow";
 import { Button } from "./ui/button";
+import { ImageToIcoToolIcon, QRCodeToolIcon } from "./icons/tool-icons";
 
 const components = [
   {
     title: "QR Code",
     href: "/qrcode",
     description: "Generate QR codes for your website or application",
-    icon: (
-      <div className="w-8 h-8 flex items-center justify-center rounded-md bg-purple-300/15 border">
-        <QrCode className="h-6 w-6 dark:text-purple-400 text-purple-900" />
-      </div>
-    ),
+    icon: <QRCodeToolIcon />,
   },
   {
     title: "Image to ICO",
     href: "/img-to-ico",
     description: "Convert images to ICO files",
-    icon: (
-      <div className="w-8 h-8 flex items-center justify-center rounded-md bg-yellow-50 dark:bg-yellow-300/15 border">
-        <ArrowLeftRight className="h-6 w-6 text-yellow-500" />
-      </div>
-    ),
+    icon: <ImageToIcoToolIcon />,
   },
 ];
 
@@ -82,10 +75,8 @@ export function MainNavbar() {
                           href={component.href}
                           className="flex flex-row gap-2"
                         >
-                          <div className="w-8 h-8 flex items-center justify-center rounded-md border">
-                            {component.icon}
-                            {/* <QrCode className="h-6 w-6 text-purple-500" /> */}
-                          </div>
+                          {component.icon}
+
                           <div className="flex-1 flex flex-col gap-1">
                             <div className="flex flex-row items-center gap-2">
                               <h3 className="text-sm font-bold">

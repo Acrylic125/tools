@@ -1,10 +1,10 @@
 "use client";
 
-import { ConvertImgToIcoSection } from "@/components/convert-img-to-ico-section";
-import { ImageToIcoToolIcon } from "@/components/icons/tool-icons";
+import { QRCodeToolIcon } from "@/components/icons/tool-icons";
 import { MainNavbar } from "@/components/navbar";
+import { QRCodeGenerator } from "@/components/qr-code-section";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { ArrowLeftRight, QrCode } from "lucide-react";
+import { QrCode } from "lucide-react";
 
 export default function Page() {
   return (
@@ -14,14 +14,13 @@ export default function Page() {
         <div className="w-full flex flex-col items-center">
           <div className="flex flex-col items-center w-full max-w-7xl text-foreground p-12 md:p-16 lg:p-24 gap-4 md:gap-6 lg:gap-8">
             <div className="flex flex-col items-center gap-4">
-              <ImageToIcoToolIcon className="h-16 w-16 p-3" />
-
+              <QRCodeToolIcon className="h-16 w-16 p-3" />
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
-                Image to ICO
+                QR Code Generator
               </h1>
             </div>
             <div className="w-full">
-              <ConvertImgToIcoSection />
+              <QRCodeGenerator />
             </div>
           </div>
         </div>
