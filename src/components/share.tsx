@@ -122,7 +122,7 @@ export function ShareCreateForm() {
                       <SelectValue placeholder="Expires In" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
+                  <SelectContent className="max-h-72">
                     <SelectGroup>
                       <SelectLabel>Expires In</SelectLabel>
                       {expiresInOptions.map((expiresIn) => (
